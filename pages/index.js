@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import { useRef } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Tooltip from '@material-ui/core/Tooltip'
 
 
 export default function Home() {
@@ -41,12 +42,20 @@ export default function Home() {
            <Link href="https://mail.google.com/">
              <p className="link">Gmail</p>
            </Link>
-           <Link href="https://www.google.co.in/imghp">
+           <Link href="https://www.google.co.in/imghp"> 
             <p className="link">Images</p>
            </Link>
-         
-         <ViewGridIcon className="h-10 w-10 p-2 rounded-full hover: bg-gray-100 cursor-pointer"/>
-         <Avatar  url="https://media-exp1.licdn.com/dms/image/C4E03AQFbqbW-MOsjIA/profile-displayphoto-shrink_100_100/0/1596051692917?e=1627516800&v=beta&t=yzLzvgcSndpiqQab00tdDQHvQrCvcSGYYKtLetxahAQ"/>
+           <Tooltip arrow title="Google apps">
+             <div>
+               <ViewGridIcon className="h-10 w-10 p-2 hover:bg-gray-100 rounded-full cursor-pointer"/>
+             </div>
+           </Tooltip>
+           <Tooltip title={`Sai Sharan Beepeta (saisharan2565@gmail.com)`}>
+             <div>
+             <Avatar  url="https://media-exp1.licdn.com/dms/image/C4E03AQFbqbW-MOsjIA/profile-displayphoto-shrink_100_100/0/1596051692917?e=1627516800&v=beta&t=yzLzvgcSndpiqQab00tdDQHvQrCvcSGYYKtLetxahAQ"/>
+             </div>
+           </Tooltip>
+           
         </div>
       </header>
 
@@ -62,8 +71,11 @@ export default function Home() {
         items-center border border-gray-200 sm:max-w-xl lg:max-w-2xl">
           <SearchIcon className="h-5 mr-3 text-gray-500"/>
           <input ref={searchInputRef} type="text" className="flex-grow focus:outline-none"/>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png"
+          <Tooltip arrow title="Search by voice">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/1200px-Google_mic.svg.png"
                className="h-5 cursor-pointer"></img>
+          </Tooltip>
+          
           {/* <MicrophoneIcon className="h-5 cursor-pointer"/> */}
         </div>
         <div className="flex flex-col w-1/2 space-y-2 justify-center mt-8

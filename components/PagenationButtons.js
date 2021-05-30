@@ -6,7 +6,7 @@ function PagenationButtons() {
     const router = useRouter();
     const startIndex = Number(router.query.start) || 0;
     return (
-        <div className="flex max-w-lg justify-between text-blue-700">
+        <div className="flex max-w-lg justify-between text-blue-700 mb-5">
             {startIndex >=10 && (
                 <Link href={`/search?searchterm=${router.query.searchterm}&start=${startIndex - 10}`}>
                 <div className="flex flex-grow flex-col items-center cursor-pointer hover:underline">

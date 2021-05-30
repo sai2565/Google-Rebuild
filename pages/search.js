@@ -4,6 +4,7 @@ import SearchResults from '../components/SearchResults'
 import { API_KEY, CONTEXT_KEY } from '../keys'
 import Response from '../Response'
 import { useRouter } from 'next/router'
+import Footer from '../components/Footer'
 
 function Search({ results }) {
     const router = useRouter();
@@ -17,6 +18,7 @@ function Search({ results }) {
             </Head>
             <SearchHeader />
             <SearchResults results={results} />
+            <Footer />
         </div>
     )
 }
